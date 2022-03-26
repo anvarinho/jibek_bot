@@ -5,7 +5,6 @@ from random import choice
 import aiohttp
 from aiohttp import web
 from aiogram import Bot, Dispatcher, types
-from aiogram.utils import context
 from aiogram.dispatcher.webhook import get_new_configured_app
 from lxml import etree
 
