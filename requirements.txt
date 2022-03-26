@@ -2,3 +2,4 @@ aiogram==2.19
 aiohttp==3.8.1
 aiosignal==1.2.0
 requests==2.27.1
+lxml==4.8.0
