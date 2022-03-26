@@ -28,9 +28,14 @@ async def on_startup(dispatcher):
 async def on_shutdown(dispatcher):
     await bot.delete_webhook()
 
-@dp.message_handler()
+@dp.message_handler(content_types=["text"])
 async def echo(message: types.Message):
-    await message.answer(message.text)
+    if message.text == "Hello":
+        await message.answer(message.chat.id, "Hi")
+    elif message.text == "Good":
+        await message.answer(message.chat.id, "How are you?")
+    else:
+        await message.answer(message.text)
 
 
 if __name__ == '__main__':
