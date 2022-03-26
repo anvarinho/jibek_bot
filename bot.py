@@ -30,12 +30,16 @@ async def on_shutdown(dispatcher):
 
 @dp.message_handler(content_types=["text"])
 async def echo(message: types.Message):
+    markup = types.InlineKeyboardMarkup(row_width=2)
+    button1 = types.InlineKeyboardButton("Hello")
+    button2 = types.InlineKeyboardButton("Good")
+    markup.add(button1, button2)
     if message.text == "Hello":
         await message.answer("Hey Hi!")
     elif message.text == "Good":
         await message.answer("How are you?")
     else:
-        await message.answer(message.text)
+        await message.answer(message.text, reply_markup=markup)
 
 
 if __name__ == '__main__':
