@@ -31,9 +31,9 @@ async def on_shutdown(dispatcher):
 @dp.message_handler(content_types=["text"])
 async def echo(message: types.Message):
     markup = types.InlineKeyboardMarkup(row_width=2)
-    button1 = types.InlineKeyboardButton("Hello")
-    button2 = types.InlineKeyboardButton("Good")
-    markup.add([button1, button2])
+    button1 = types.InlineKeyboardButton("Мой WhatsApp 📱", url="https://wa.me/79999788423")
+    button2 = types.InlineKeyboardButton("Мой Telegram 📲", url="https://t.me/dokbaeva")
+    markup.add(button1, button2)
     if message.text == "Hello":
         await message.answer("Hey Hi!")
     elif message.text == "Good":
