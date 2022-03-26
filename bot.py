@@ -29,30 +29,6 @@ async def on_startup(dispatcher):
 async def on_shutdown(dispatcher):
     await bot.delete_webhook()
 
-
-@dp.message_handler(commands="start")
-async def cmd_start(message: types.Message):
-    #keyboard = types.ReplyKeyboardMarkup()
-    #button_1 = types.KeyboardButton(text="С пюрешкой")
-    #keyboard.add(button_1)
-    #button_2 = "Без пюрешки"
-    #keyboard.add(button_2)
-    
-    keyboard = types.ReplyKeyboardMarkup(resize_keyboard=True, row_width=2)
-    services = types.KeyboardButton(services)
-    address = types.KeyboardButton(address)
-    contacts = types.KeyboardButton(contacts)
-    about = types.KeyboardButton(about_me)
-    text = f'Привет, <b>{message.from_user.first_name}</b> ☺️\nЯ Чат-Бот Жибек 🤖!'
-    keyboard.add(services, address, contacts, about)
-    photo = open("kitten3.jpg", "rb")
-
-    await message.answer(text, reply_markup=keyboard, parse_mode="html")
-    sleep(0.5)
-    await message.answer_photo(photo)
-    sleep(0.5)
-    await message.answer("Чем я могу тебе помочь?")
-
 @dp.message_handler()
 async def echo(message: types.Message):
     await message.answer(message.text)
