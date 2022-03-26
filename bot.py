@@ -31,7 +31,7 @@ async def on_shutdown(dispatcher):
 @dp.message_handler(content_types=["text"])
 async def echo(message: types.Message):
     if message.text == "Hello":
-        await message.answer("Hi")
+        await message.answer(message)
     elif message.text == "Good":
         await message.answer("How are you?")
     else:
