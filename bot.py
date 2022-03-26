@@ -33,7 +33,7 @@ async def echo(message: types.Message):
     markup = types.InlineKeyboardMarkup(row_width=2)
     button1 = types.InlineKeyboardButton("Hello")
     button2 = types.InlineKeyboardButton("Good")
-    markup.add(button1, button2)
+    markup.add([button1, button2])
     if message.text == "Hello":
         await message.answer("Hey Hi!")
     elif message.text == "Good":
