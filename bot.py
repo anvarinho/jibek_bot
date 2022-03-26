@@ -31,7 +31,7 @@ async def on_shutdown(dispatcher):
 @dp.message_handler(content_types=["text"])
 async def echo(message: types.Message):
     if message.text == "Hello":
-        photo = open("kitten3.jpg", "r")
+        photo = open("kitten3.jpg", "rb")
         await message.answer_photo(photo)
     elif message.text == "Good":
         await message.answer("How are you?")
