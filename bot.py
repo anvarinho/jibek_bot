@@ -31,9 +31,9 @@ async def on_shutdown(dispatcher):
 @dp.message_handler(content_types=["text"])
 async def echo(message: types.Message):
     if message.text == "Hello":
-        await message.answer(message.chat.id, "Hi")
+        await message.answer("Hi")
     elif message.text == "Good":
-        await message.answer(message.chat.id, "How are you?")
+        await message.answer("How are you?")
     else:
         await message.answer(message.text)
 
