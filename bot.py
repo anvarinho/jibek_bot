@@ -4,7 +4,6 @@ from aiogram import Bot
 from aiogram.dispatcher import Dispatcher
 from aiogram.utils.executor import start_webhook
 from aiogram import Bot, types
-from time import sleep
 
 TOKEN = os.getenv('TOKEN')
 bot = Bot(token=TOKEN)
@@ -31,14 +30,7 @@ async def on_shutdown(dispatcher):
 
 @dp.message_handler()
 async def echo(message: types.Message):
-    if message.text == "Hello":
-        await message.answer(message.chat.id, "How are you?")
-
-    elif message.text == "Good":
-        await message.answer(message.chat.id, "Nice")
-
-    else:
-        await message.answer(message.text)
+    await message.answer(message.text)
 
 
 if __name__ == '__main__':
