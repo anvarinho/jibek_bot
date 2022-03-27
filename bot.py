@@ -35,6 +35,8 @@ async def echo(message: types.Message):
     button2 = types.InlineKeyboardButton("Telegram 📲", url="https://t.me/dokbaeva")
     markup.add(button1, button2)
     if message.text == "Hello":
+        photo = open("kitten3.jpg", "rb")
+        await message.answer_photo(photo)
         await message.answer("Hey Hi!")
     elif message.text == "Good":
         await message.answer("How are you?")
